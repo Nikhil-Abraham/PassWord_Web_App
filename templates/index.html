@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+index
+{% endblock %}
+
+{% block body %}
+<header>
+      <nav>
+        <div class="title">Nik-Pass...</div>
+
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <div class = "main-block">
+       <div class="new">
+         <form action="/" method="post">
+          <h2>Add Password</h2>
+          <div class="input">
+            <input type="text" name="account"placeholder="Name" autocomplete="off" autofocus>
+            <input type="text" name="username"  placeholder="Username" autocomplete="off">
+            <input type="text" name="password"placeholder="Password" autocomplete="off">
+            <input type="submit" value="Add" class="btn">
+          </div>
+        </form>
+       </div>
+       <div class="data">
+         <table>
+           <thead>
+             <tr>
+               <th>Account</th>
+               <th>Username</th>
+               <th>Password</th>
+             </tr>
+             {% for row in rows %}
+             <tr>
+               <td>{{ row["account"] }}</td>
+               <td>{{ row["username"] }}</td>
+               <td>{{ row["hash"] }}</td>
+             </tr>
+             {% endfor %}
+           </thead>
+         </table>
+       </div>
+       <form action="/edit" method="get">
+           <div>
+             <input type="submit" value="Edit" class="edit-btn">
+           </div>
+         </form>
+      </div>
+    </main>
+
+{% endblock %}

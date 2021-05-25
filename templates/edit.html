@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+index
+{% endblock %}
+
+{% block body %}
+<header>
+      <nav>
+        <div class="title">Nik-Pass...</div>
+
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <div class = "main-block">
+       <div class="new">
+        <h2>Edit Password</h2>
+        <div class="edit-group">
+        <form action="/edit" method="post">
+          <select name="account" class="form-control">
+            <option disable selected value="">Symbol</option>
+            {% for row in rows %}
+              {% for key,account in row.items() %}
+                <option value="{{account}}">{{account}}</option>
+              {% endfor %}
+            {% endfor %}
+          </select>
+          <input type="submit" name="submit_button" value="Edit" class="btn">
+          <input type="submit" name="submit_button" value="Delete" class="btn">
+        </div>
+        
+       </div>
+      </div>
+    </main>
+
+{% endblock %}

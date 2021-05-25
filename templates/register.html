@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block body %}
+  <header>
+      <nav>
+        <div class="title">Nik-Pass...</div>
+        <a href="/login">Login</a>
+      </nav>
+    </header>
+    <main>
+      <div class="login-box">
+        <div class="form">
+          <form action="/register" method="post">
+            <div class="title">
+              <p>Register</p>
+            </div>
+            <div class="input">
+              <input type="text" name="username" autocomplete="off" autofocus placeholder="Username">
+            </div>
+            <div class="input">
+              <input type="text" name="password" placeholder="Password">
+            </div>
+            <div class="input">
+              <input type="password" name="confirmation" placeholder="Confirm Password">
+            </div>
+            <div class="btn">
+              <input type="submit" value="Register">
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+{% endblock %}

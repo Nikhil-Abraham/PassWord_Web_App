@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+index
+{% endblock %}
+
+{% block body %}
+<header>
+      <nav>
+        <div class="title">Nik-Pass...</div>
+
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
+    <main>
+      <div class = "main-block">
+       <div class="new">
+         <form action="/edit-acc" method="post">
+          <h2>Edit Password</h2>
+          <div class="input">
+            <input type="text" name="account" value="{{account}}" readonly>
+            <input type="text" name="username"  placeholder="Username">
+            <input type="text" name="password"placeholder="Password">
+            <input type="submit" value="Update" class="btn">
+          </div>
+        </form>
+       </div>
+      </div>
+    </main>
+    
+    
+    
+{% endblock %}
